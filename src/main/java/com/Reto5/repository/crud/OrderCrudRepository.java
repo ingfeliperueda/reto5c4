@@ -22,9 +22,9 @@ public interface OrderCrudRepository extends MongoRepository<Order, Integer> {
     //Para seleccionar la orden con el id maximo
     Optional<Order> findTopByOrderByIdDesc();
     
-    List<Order> findBySalesManIdAndStates(String state, Integer id);
+    List<Order> findBySalesManIdAndStates(String status, Integer id);
     
-    List<Order> findByordersSalesManByDate(Date dateStr, Integer id);
+    List<Order> findByordersSalesManByDate(Date registerDay, Integer id);
     
     List<Order> findBySalesManId(Integer id);
 }

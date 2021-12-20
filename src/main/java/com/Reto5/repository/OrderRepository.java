@@ -109,24 +109,24 @@ public class OrderRepository {
     
     /**
     *Metodo que obtiene las ordenes por el estado del vendedor
-    * @param state
+    * @param status
     * @param id
     * @paramid
     * @return 
     */
-    public List<Order> getBySalesManIdAndStates(String state, Integer id){
-        return orderCrudRepository.findBySalesManIdAndStates(state, id);
+    public List<Order> getBySalesManIdAndStates(String status, Integer id){
+        return orderCrudRepository.findBySalesManIdAndStates(status, id);
     }
     
     /**
      * Metodo que obtiene la ordenes por la fecha de venta que realiza el vendedor
-     * @param dateStr
+     * @param registerDay
      * @param id
      * @return 
     */
-    public List<Order> getordersSalesManByDate(String dateStr, Integer id){
+    public List<Order> getordersSalesManByDate(String registerDay, Integer id){
         try {
-            return orderCrudRepository.findByordersSalesManByDate(new SimpleDateFormat("yyyy-MM-dd").parse(dateStr), id);
+            return orderCrudRepository.findByordersSalesManByDate(new SimpleDateFormat("yyyy-MM-dd").parse(registerDay), id);
         } catch (ParseException e) {
             e.printStackTrace();
             return null;

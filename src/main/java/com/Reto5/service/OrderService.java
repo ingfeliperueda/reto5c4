@@ -47,7 +47,7 @@ public class OrderService {
         if (order.getId() != null) {
             Optional<Order> orderDb = orderRepository.getOrder(order.getId());
             if (!orderDb.isEmpty()) {
-                if (order.getStatus() != null) {
+                if (order.getStatus()!= null) {
                     orderDb.get().setStatus(order.getStatus());
                 }
                 orderRepository.update(orderDb.get());
@@ -77,11 +77,11 @@ public class OrderService {
         return orderRepository.getordersSalesManByID(id);
     }
     
-    public List<Order> getBySalesManIdAndStates(String state, Integer id){
-        return orderRepository.getBySalesManIdAndStates(state, id);
+    public List<Order> getBySalesManIdAndStates(String status, Integer id){
+        return orderRepository.getBySalesManIdAndStates(status, id);
     }
     
-    public List<Order> getordersSalesManByDate(String dateStr, Integer id){
-        return orderRepository.getordersSalesManByDate(dateStr, id);
+    public List<Order> getordersSalesManByDate(String registerDay, Integer id){
+        return orderRepository.getordersSalesManByDate(registerDay, id);
     }
 }
