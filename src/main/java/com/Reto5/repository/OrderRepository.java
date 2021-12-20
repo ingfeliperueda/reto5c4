@@ -110,6 +110,7 @@ public class OrderRepository {
     /**
     *Metodo que obtiene las ordenes por el estado del vendedor
     * @param state
+    * @param id
     * @paramid
     * @return 
     */

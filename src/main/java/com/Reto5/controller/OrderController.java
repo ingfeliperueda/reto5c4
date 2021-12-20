@@ -65,12 +65,12 @@ public class OrderController {
         return orderService.getordersSalesManByID(id);
     }
     
-    @GetMapping("/state/{status}/{id}")
+    @GetMapping("/state/{state}/{id}")
     public List<Order> getBySalesManIdAndStates(@PathVariable("state") String state, @PathVariable("id") Integer id){
         return orderService.getBySalesManIdAndStates(state, id);
     }
     
-    @GetMapping("/date/{date}/{id}")
+    @GetMapping("/date/{dateStr}/{id}")
     public List<Order> getordersSalesManByDate(@PathVariable("date")String dateStr, @PathVariable("id")Integer id){
         return orderService.getordersSalesManByDate(dateStr, id);
     }
